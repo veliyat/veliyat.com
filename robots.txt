@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# SITE-ADDRESS
+Sitemap: https://veliyat.com/sitemap.xml

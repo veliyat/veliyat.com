@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SITE-ADDRESS: https://veliyat.com appears in every <loc> below. Replace in one pass if it changes. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://veliyat.com/</loc></url>
+  <url><loc>https://veliyat.com/work/</loc></url>
+  <url><loc>https://veliyat.com/teaching/</loc></url>
+  <url><loc>https://veliyat.com/videos/</loc></url>
+  <url><loc>https://veliyat.com/about/</loc></url>
+  <url><loc>https://veliyat.com/resume/</loc></url>
+</urlset>
