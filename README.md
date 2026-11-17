@@ -36,8 +36,11 @@ Open [http://localhost:8000](http://localhost:8000). Run from the repository roo
 │   └── img/
 │       ├── favicon.svg   # Favicon
 │       ├── social.jpg    # Open Graph social preview (1200 × 630)
-│       ├── ravi-pic-big.jpg   # Portrait image
-│       └── ravi-pic-big.webp  # Modern WebP portrait asset
+│       ├── ravi-pic-big.jpg   # Portrait image (About page)
+│       ├── ravi-pic-big.webp  # Modern WebP portrait asset (About page)
+│       ├── ravi-pic-final.png # Master high-resolution transparent portrait (1818 × 1820)
+│       ├── ravi-transparent.webp # Optimized seamless transparent portrait (Home hero, 71 KB)
+│       └── ravi-transparent.png  # Retina PNG fallback for seamless portrait (893 × 1000)
 ├── robots.txt            # Search engine crawler directives
 ├── sitemap.xml           # XML sitemap for search indexing
 └── .gitignore            # Git ignore rules
