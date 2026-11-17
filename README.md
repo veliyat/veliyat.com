@@ -30,6 +30,9 @@ Open [http://localhost:8000](http://localhost:8000). Run from the repository roo
 ├── assets/
 │   ├── css/
 │   │   └── site.css      # The single site stylesheet (light/dark/print/responsive)
+│   ├── fonts/
+│   │   ├── inter-latin-wght-normal.woff2  # Self-hosted Inter variable font (weights 100–900)
+│   │   └── LICENSE       # SIL Open Font License
 │   └── img/
 │       ├── favicon.svg   # Favicon
 │       ├── social.jpg    # Open Graph social preview (1200 × 630)
@@ -44,7 +47,8 @@ Open [http://localhost:8000](http://localhost:8000). Run from the repository roo
 
 - **Zero JavaScript**: Pure semantic HTML5 and modern CSS (`:has()`, `clamp()`, CSS Grid, Flexbox).
 - **Single Stylesheet**: All rules, themes, animations, and print media queries live in `assets/css/site.css`.
-- **System Fonts**: Native font stack (`system-ui`, `-apple-system`, `BlinkMacSystemFont`, `Segoe UI`, `Roboto`) for zero network latency and crisp rendering.
+- **Typography & Font**: Self-hosted Inter variable font (`inter-latin-wght-normal.woff2`, weights 100–900) preloaded on every page, with system font fallback; system monospace for wide-spaced uppercase eyebrow labels.
+- **Design System (Version 6)**: Sticky translucent header with blur, 3-card hero grid on Home, vertical timeline line with dot markers on career history, rounded chip badges for technologies (fallback to comma list when printed), "On this page" jump-link rows under `h1`, and "Next" card navigation at inner page footers.
 - **Dark & Light Modes**: Automatic palette switching via `prefers-color-scheme` (refined linen light theme and slate dark theme).
 - **Responsive Layout**: Fluid typography with `clamp()`; header navigation engineered to fit on a single line at mobile widths (390px); mobile hero arranges portrait and heading side-by-side without dangling space.
 - **Print Optimization**: Dedicated `@media print` rules on `/resume/` engineered to fit cleanly onto exactly two A4 pages.
@@ -64,6 +68,8 @@ Open [http://localhost:8000](http://localhost:8000). Run from the repository roo
 - [x] Work: Verified and linked all GitHub code repositories.
 - [x] Resume: Added contact line under `h1`, restored product description subhead, and verified two-page A4 print layout.
 - [x] Videos: Meta description and intro updated; group headings hidden pending video catalog.
+- [x] Design v6: Self-hosted Inter variable font and preloads across all pages.
+- [x] Design v6: Sticky translucent header, cards, chips, timeline, jump links, and next-page cards.
 
 ### Remaining / Waiting on Content
 - [ ] Three selected videos for Home: titles and YouTube URLs.
