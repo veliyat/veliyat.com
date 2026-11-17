@@ -1210,7 +1210,7 @@ a:hover {
 }
 
 /* Inner pages: wide layout, but text blocks keep a comfortable line length */
-main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section):not(.hero-compact) {
+main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section):not(.hero-compact):not(.contact-panel) {
   max-width: var(--measure);
 }
 
@@ -1350,3 +1350,42 @@ main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section):not(.
   .hero-cta .btn { width: 100%; }
 }
 .hero-compact h1 { max-width: none; font-size: clamp(2rem, 1.5rem + 2vw, 2.75rem); }
+
+/* ---- Home: contact panel (brief v14) ---- */
+.contact-panel {
+  display: grid;
+  gap: var(--space-5);
+  padding: var(--space-6) var(--space-5);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+.contact-panel .contact-text p { margin-top: var(--space-3); color: var(--color-muted); max-width: 36rem; }
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.contact-actions li { display: flex; }
+/* One size for every button in the row: hierarchy comes from fill, not size */
+.contact-actions .btn {
+  min-height: 2.75rem;
+  padding: 0.6rem 1.25rem;
+  font-size: var(--text-small);
+}
+.contact-actions .btn-icon { width: 1rem; height: 1rem; flex: none; margin-right: 0.5rem; }
+@media (min-width: 52rem) {
+  .contact-panel {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: var(--space-6);
+  }
+}
+/* Phones: 2 x 2 grid of equal buttons */
+@media (max-width: 39.99rem) {
+  .contact-actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .contact-actions .btn { width: 100%; padding-inline: 0.75rem; }
+}
