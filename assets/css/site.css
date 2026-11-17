@@ -1158,7 +1158,6 @@ a:hover {
 }
 
 /* ---- Site navigation (one design at every width) ---- */
-.site-header .wrap { max-width: var(--measure-wide); }
 .site-nav ul {
   display: flex;
   justify-content: space-between;
@@ -1197,6 +1196,14 @@ a:hover {
   .site-nav a { font-size: 0.9375rem; padding-inline: 0.125rem; }
 }
 @media (min-width: 48rem) {
-  .site-nav ul { justify-content: center; gap: 2.5rem; }
+  .site-nav ul { justify-content: flex-start; gap: 2rem; }
   .site-nav a { min-height: 3.75rem; }
+}
+
+/* Menu text lines up exactly with the page content edge */
+.site-nav li:first-child a { margin-left: -0.25rem; }
+.site-nav li:last-child a { margin-right: -0.25rem; }
+@media (max-width: 23.99rem) {
+  .site-nav li:first-child a { margin-left: -0.125rem; }
+  .site-nav li:last-child a { margin-right: -0.125rem; }
 }
