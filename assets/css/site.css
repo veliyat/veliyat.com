@@ -1179,3 +1179,44 @@ a:hover {
     animation: none !important;
   }
 }
+/* ---- Phone layout fixes (website-handoff/home-mobile.css) ---- */
+@media (max-width: 47.99rem) {
+  .site-header { padding-block: 0.5rem; }
+  .site-nav ul { flex-wrap: nowrap; justify-content: space-between; gap: 0; }
+  .site-nav a { padding: 0.35rem 0.4rem; font-size: 0.875rem; }
+  .hero-home {
+    padding-top: 1.75rem;
+    padding-bottom: 0;
+    background-position: right 1.5rem top 1.75rem;
+    background-size: auto 9.5rem;
+  }
+  .hero-home h1 {
+    min-height: 9.5rem;
+    padding-right: 10.25rem;
+    display: flex;
+    align-items: center;
+  }
+  .hero-home .lede { margin-top: 1rem; }
+  .actions .btn { flex: 1 1 0; }
+  .actions li { flex: 1 1 0; display: flex; }
+  .cards-grid { margin-top: 2rem; gap: 0.75rem; }
+  .card { padding: 1.1rem 1.25rem; }
+  .card .eyebrow { display: none; }
+  .card h2 { display: flex; justify-content: space-between; align-items: baseline; }
+  .card .card-arrow { display: none; }
+  .card h2::after { content: "→"; color: var(--color-accent); font-weight: 600; }
+  .footer-links { gap: 0 1rem; }
+}
+@media (max-width: 47.99rem) {
+  .site-nav ul { gap: 0; }
+  .actions li, .actions .btn { flex: 1 1 auto; }
+  .btn { white-space: nowrap; padding-inline: 1rem; }
+}
+@media (max-width: 23.99rem) {
+  .site-header .wrap { padding-inline: 0.5rem; }
+  .site-nav a { padding-inline: 0.3rem; font-size: 0.8125rem; }
+}
+@media (max-width: 23.99rem) {
+  .hero-home { background-position: right 1rem top 1.75rem; background-size: auto 8rem; }
+  .hero-home h1 { min-height: 8rem; padding-right: 8.75rem; }
+}

@@ -22,10 +22,8 @@ Open [http://localhost:8000](http://localhost:8000). Run from the repository roo
 │   └── index.html        # Developer education & corporate training
 ├── videos/
 │   └── index.html        # Developer tutorial videos catalog
-├── about/
-│   └── index.html        # Biography & career timeline
 ├── resume/
-│   └── index.html        # Print-optimized CV (targets 2 A4 pages)
+│   └── index.html        # Print-optimized CV (targets 2 A4 pages); also holds the screen-only bio for hosts
 ├── 404.html              # Custom 404 error page
 ├── assets/
 │   ├── css/
@@ -36,8 +34,8 @@ Open [http://localhost:8000](http://localhost:8000). Run from the repository roo
 │   └── img/
 │       ├── favicon.svg   # Favicon
 │       ├── social.jpg    # Open Graph social preview (1200 × 630)
-│       ├── ravi-pic-big.jpg   # Portrait image (About page)
-│       ├── ravi-pic-big.webp  # Modern WebP portrait asset (About page)
+│       ├── ravi-pic-big.jpg   # Former About portrait (no longer referenced)
+│       ├── ravi-pic-big.webp  # Former About portrait, WebP (no longer referenced)
 │       ├── ravi-transparent.webp # Optimized seamless transparent portrait (Home hero, 71 KB)
 │       └── ravi-transparent.png  # Retina PNG fallback for seamless portrait (893 × 1000)
 ├── robots.txt            # Search engine crawler directives
@@ -54,7 +52,7 @@ Open [http://localhost:8000](http://localhost:8000). Run from the repository roo
 - **Dark & Light Modes**: Automatic palette switching via `prefers-color-scheme` (refined linen light theme and slate dark theme).
 - **Responsive Layout**: Fluid typography with `clamp()`; header navigation engineered to fit on a single line at mobile widths (390px); mobile hero arranges portrait and heading side-by-side without dangling space.
 - **Print Optimization**: Dedicated `@media print` rules on `/resume/` engineered to fit cleanly onto exactly two A4 pages.
-- **Consistent Navigation**: Header navigation (`Home`, `Work`, `Teaching`, `Videos`, `About`, `Resume`) and footer links are structurally consistent across all pages, with `aria-current="page"` set on the active page.
+- **Consistent Navigation**: Header navigation (`Home`, `Work`, `Teaching`, `Videos`, `Resume`) and footer links are structurally consistent across all pages, with `aria-current="page"` set on the active page.
 
 ## Site Metadata & Address
 
@@ -64,7 +62,7 @@ Open [http://localhost:8000](http://localhost:8000). Run from the repository roo
 
 ### Completed
 - [x] Header navigation updated with `Home` as first link; site name removed per brief v5.
-- [x] Portrait image integrated on Home and About (`assets/img/ravi-pic-big.jpg` / `.webp`) with responsive side-by-side mobile layout.
+- [x] Portrait on Home only (brief v7; About page merged into Resume) with responsive side-by-side mobile layout.
 - [x] Work: Optivo Health product tour descriptive button (`https://www.optivohealth.com/product-tour`).
 - [x] Work: AI Coding Tutor live app link (`https://ai-coding-tutor-taupe.vercel.app/`) with subtext code icon pointing to GitHub source.
 - [x] Work: Verified and linked all GitHub code repositories.
