@@ -11,7 +11,7 @@
   font-weight: 100 900;
   font-display: swap;
   src: url("/assets/fonts/inter-latin-wght-normal.woff2") format("woff2-variations"),
-       url("/assets/fonts/inter-latin-wght-normal.woff2") format("woff2");
+    url("/assets/fonts/inter-latin-wght-normal.woff2") format("woff2");
 }
 
 /* ---- Tokens ------------------------------------------------------------- */
@@ -155,7 +155,7 @@ ol {
   margin: 0;
 }
 
-p + p {
+p+p {
   margin-top: var(--space-4);
 }
 
@@ -311,7 +311,7 @@ a:hover {
   padding-top: var(--space-6);
 }
 
-.hero-text > * + * {
+.hero-text>*+* {
   margin-top: var(--space-4);
 }
 
@@ -370,6 +370,61 @@ a:hover {
 .portrait img {
   object-fit: cover;
   object-position: center;
+}
+
+/* ---- Home Hero with Portrait Background --------------------------------- */
+.hero-home {
+  position: relative;
+  width: 100%;
+  display: block;
+  background-image: url("/assets/img/ravi-transparent.png");
+  background-image: image-set(url("/assets/img/ravi-transparent.webp") type("image/webp"),
+      url("/assets/img/ravi-transparent.png") type("image/png"));
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: auto 16rem;
+  padding-top: var(--space-7);
+  padding-bottom: 18rem;
+}
+
+.hero-home .hero-text {
+  width: 100%;
+  max-width: 100%;
+}
+
+.hero-home .hero-text>*+* {
+  margin-top: var(--space-4);
+}
+
+.hero-home .lede,
+.hero-home .support {
+  max-width: 36rem;
+}
+
+@media (min-width: 48rem) {
+  .hero-home {
+    background-position: right clamp(2rem, 5vw, 5rem) center;
+    background-size: auto min(92%, 26rem);
+    padding-top: var(--space-7);
+    padding-bottom: var(--space-6);
+    min-height: 26rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-home .hero-text {
+    flex: 0 1 38rem;
+    max-width: 38rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .hero-home {
+    background-position: right clamp(3rem, 7vw, 7rem) center;
+    background-size: auto min(94%, 28rem);
+    min-height: 28rem;
+    padding-top: calc(var(--space-7) + 6rem);
+  }
 }
 
 /* ---- Buttons ------------------------------------------------------------ */
@@ -519,8 +574,8 @@ a:hover {
   text-decoration: none;
   color: var(--color-text);
   transition: transform var(--duration-fast) ease,
-              border-color var(--duration-fast) ease,
-              box-shadow var(--duration-fast) ease;
+    border-color var(--duration-fast) ease,
+    box-shadow var(--duration-fast) ease;
 }
 
 .card:hover,
@@ -566,11 +621,11 @@ a:hover {
   border-top: 1px solid var(--color-rule);
 }
 
-.section > h2 + * {
+.section>h2+* {
   margin-top: var(--space-3);
 }
 
-.section > * + .more {
+.section>*+.more {
   margin-top: var(--space-4);
 }
 
@@ -789,7 +844,7 @@ a:hover {
 }
 
 /* ---- Long-form pages (Work, Teaching, Videos, Resume, About) ------------- */
-.prose > * + * {
+.prose>*+* {
   margin-top: var(--space-3);
 }
 
@@ -813,7 +868,7 @@ a:hover {
   color: var(--color-accent);
 }
 
-.prose li + li {
+.prose li+li {
   margin-top: var(--space-2);
 }
 
@@ -841,7 +896,7 @@ a:hover {
 }
 
 /* GitHub repo tags in Work */
-.prose li > a[href*="github.com/veliyat/"] {
+.prose li>a[href*="github.com/veliyat/"] {
   font-family: var(--font-mono);
   font-size: 0.88em;
   padding: 0.15em 0.45em;
@@ -853,7 +908,7 @@ a:hover {
   transition: border-color var(--duration-fast) ease, background-color var(--duration-fast) ease;
 }
 
-.prose li > a[href*="github.com/veliyat/"]:hover {
+.prose li>a[href*="github.com/veliyat/"]:hover {
   border-color: var(--color-accent);
   background-color: var(--color-surface-hover);
 }
@@ -866,11 +921,11 @@ a:hover {
   margin-top: var(--space-3);
 }
 
-.role > :first-child {
+.role> :first-child {
   margin-top: 0;
 }
 
-.role > * + * {
+.role>*+* {
   margin-top: var(--space-3);
 }
 
@@ -986,7 +1041,7 @@ a:hover {
     gap: 0;
   }
 
-  .hero-text > * + * {
+  .hero-text>*+* {
     margin-top: 0.25rem;
   }
 
@@ -1045,7 +1100,7 @@ a:hover {
     margin-top: 0.5rem;
   }
 
-  .section > h2 + * {
+  .section>h2+* {
     margin-top: 0.2rem;
   }
 
@@ -1059,7 +1114,7 @@ a:hover {
     margin-top: 0.25rem;
   }
 
-  .role > * + * {
+  .role>*+* {
     margin-top: 0.2rem;
   }
 
@@ -1068,7 +1123,7 @@ a:hover {
     margin-top: 0.2rem;
   }
 
-  .prose li + li {
+  .prose li+li {
     margin-top: 0.12rem;
   }
 
@@ -1099,6 +1154,7 @@ a:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
