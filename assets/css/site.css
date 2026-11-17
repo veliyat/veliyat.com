@@ -97,6 +97,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  scrollbar-gutter: stable;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -1209,7 +1210,7 @@ a:hover {
 }
 
 /* Inner pages: wide layout, but text blocks keep a comfortable line length */
-main > .wrap-wide > *:not(.hero-home):not(.cards-grid) {
+main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section) {
   max-width: var(--measure);
 }
 
@@ -1220,3 +1221,78 @@ main > .wrap-wide > *:not(.hero-home):not(.cards-grid) {
     max-width: none;
   }
 }
+
+/* ---- Video cards -------------------------------------------------------- */
+.video-group-note {
+  margin-top: var(--space-2);
+  color: var(--color-muted);
+  max-width: var(--measure);
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  margin-top: var(--space-5);
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 40rem) {
+  .video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 64rem) {
+  .video-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.video-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: transform var(--duration-fast) ease,
+    border-color var(--duration-fast) ease,
+    box-shadow var(--duration-fast) ease;
+}
+
+.video-card:hover,
+.video-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--color-accent);
+  box-shadow: 0 8px 24px var(--color-accent-subtle);
+  text-decoration: none;
+}
+
+.video-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: var(--color-surface-hover);
+}
+
+.video-title {
+  padding: var(--space-4) var(--space-4) 0;
+  color: var(--color-text-bold);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.video-lang {
+  align-self: flex-start;
+  margin: var(--space-2) var(--space-4) 0;
+  padding: 0.1rem 0.55rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-subtle);
+  color: var(--color-accent);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.video-card > :last-child { margin-bottom: var(--space-4); }
