@@ -1210,7 +1210,7 @@ a:hover {
 }
 
 /* Inner pages: wide layout, but text blocks keep a comfortable line length */
-main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section) {
+main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section):not(.hero-compact) {
   max-width: var(--measure);
 }
 
@@ -1296,3 +1296,57 @@ main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section) {
 }
 
 .video-card > :last-child { margin-bottom: var(--space-4); }
+
+/* ---- External links (brief A2) ------------------------------------------
+   .ext marks every link that leaves the site. Markup supplies a
+   <span class="ext-arrow" aria-hidden="true">↗</span> and a visually
+   hidden " (opens in a new tab)" span. */
+.ext-arrow {
+  display: inline-block;
+  margin-left: 0.2em;
+  font-size: 0.85em;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform var(--duration-fast) ease;
+}
+
+.ext:hover .ext-arrow,
+.ext:focus-visible .ext-arrow {
+  transform: translate(1px, -1px);
+}
+
+/* "More" links use → for internal pages; external ones use ↗ instead */
+.more a.ext::after { content: none; }
+
+.video-watch {
+  padding: 0 var(--space-4);
+  margin-top: 0.25rem;
+  color: var(--color-muted);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.video-card:hover .video-watch,
+.video-card:focus-visible .video-watch {
+  color: var(--color-accent);
+}
+
+@media print {
+  .ext-arrow { display: none; }
+}
+
+/* ---- Compact page intro (Videos) ---- */
+.hero-compact { padding-top: var(--space-6); gap: var(--space-4); }
+.hero-compact .hero-text { max-width: none; }
+.hero-compact .lede { max-width: none; }
+.btn-lg { min-height: 3rem; padding: 0.75rem 1.5rem; font-size: 1rem; }
+.hero-cta { margin: 0; }
+@media (min-width: 40rem) {
+  .hero-compact { align-items: flex-end; justify-content: space-between; padding-top: var(--space-6); }
+  .hero-compact .hero-text { flex: 1 1 auto; }
+  .hero-cta { flex: none; }
+}
+@media (max-width: 39.99rem) {
+  .hero-cta .btn { width: 100%; }
+}
+.hero-compact h1 { max-width: none; font-size: clamp(2rem, 1.5rem + 2vw, 2.75rem); }
