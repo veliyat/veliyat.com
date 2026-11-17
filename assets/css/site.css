@@ -244,63 +244,7 @@ a:hover {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-rule);
-  padding-block: var(--space-3);
   transition: background-color var(--duration-fast) ease, border-color var(--duration-fast) ease;
-}
-
-.site-header .wrap {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.site-nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0 0.25rem;
-  padding: 0;
-  list-style: none;
-}
-
-.site-nav a {
-  display: inline-block;
-  padding: 0.25rem 0.35rem;
-  border-radius: var(--radius-sm);
-  color: var(--color-muted);
-  text-decoration: none;
-  font-size: var(--text-small);
-  font-weight: 500;
-  white-space: nowrap;
-  transition: color var(--duration-fast) ease, background-color var(--duration-fast) ease;
-}
-
-.site-nav a:hover {
-  color: var(--color-text);
-  background-color: var(--color-surface);
-  text-decoration: none;
-}
-
-.site-nav a[aria-current="page"] {
-  color: var(--color-accent);
-  font-weight: 600;
-  background-color: var(--color-accent-subtle);
-  text-decoration: none;
-}
-
-@media (min-width: 40rem) {
-  .site-header {
-    padding-block: var(--space-4);
-  }
-
-  .site-nav ul {
-    gap: 0 var(--space-2);
-  }
-
-  .site-nav a {
-    padding: 0.4rem 0.85rem;
-    font-size: inherit;
-  }
 }
 
 /* ---- Hero / Intro ------------------------------------------------------- */
@@ -1181,22 +1125,6 @@ a:hover {
 }
 /* ---- Phone layout fixes (website-handoff/home-mobile.css) ---- */
 @media (max-width: 47.99rem) {
-  .site-header { padding-block: 0.375rem; }
-  .site-nav ul {
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    gap: 0.25rem;
-  }
-  .site-nav li { flex: 1 1 auto; }
-  .site-nav a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 2.75rem;
-    padding: 0.5rem 0.25rem;
-    font-size: 1rem;
-    font-weight: 500;
-  }
   .hero-home {
     padding-top: 1.75rem;
     padding-bottom: 0;
@@ -1225,9 +1153,50 @@ a:hover {
   .btn { white-space: nowrap; padding-inline: 1rem; }
 }
 @media (max-width: 23.99rem) {
-  .site-nav a { font-size: 0.9375rem; padding-inline: 0.125rem; }
-}
-@media (max-width: 23.99rem) {
   .hero-home { background-position: right 1rem top 1.75rem; background-size: auto 8rem; }
   .hero-home h1 { min-height: 8rem; padding-right: 8.75rem; }
+}
+
+/* ---- Site navigation (one design at every width) ---- */
+.site-header .wrap { max-width: var(--measure-wide); }
+.site-nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.site-nav a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 3.25rem;
+  padding-inline: 0.25rem;
+  color: var(--color-muted);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--duration-fast) ease;
+}
+.site-nav a:hover { color: var(--color-text); }
+.site-nav a:active { color: var(--color-accent); }
+.site-nav a[aria-current="page"] { color: var(--color-text); }
+.site-nav a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0.25rem;
+  right: 0.25rem;
+  bottom: -1px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-accent);
+}
+@media (max-width: 23.99rem) {
+  .site-nav a { font-size: 0.9375rem; padding-inline: 0.125rem; }
+}
+@media (min-width: 48rem) {
+  .site-nav ul { justify-content: center; gap: 2.5rem; }
+  .site-nav a { min-height: 3.75rem; }
 }
