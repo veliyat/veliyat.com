@@ -701,32 +701,41 @@ a:hover {
   transform: translateX(4px);
 }
 
-/* ---- Timeline with vertical line and dots -------------------------------- */
+/* ---- Timeline (brief v16): one row per role, date + role + organisation ---- */
 .timeline {
   position: relative;
   list-style: none;
+  margin: var(--space-4) 0 0;
   padding: 0;
-  margin-top: var(--space-4);
-  margin-left: 0.5rem;
-  padding-left: 1.5rem;
-  border-left: 2px solid var(--color-rule);
+  max-width: 52rem;
 }
-
-.timeline li {
-  position: relative;
-  margin-bottom: var(--space-4);
-  padding-left: 0.5rem;
-}
-
-.timeline li:last-child {
-  margin-bottom: 0;
-}
-
-.timeline li::before {
+/* the vertical line, through the centre of the dots */
+.timeline::before {
   content: "";
   position: absolute;
-  left: calc(-1.5rem - 6px);
-  top: 0.45rem;
+  left: calc(0.75rem + 0.5rem - 1px);
+  top: 1.35rem;
+  bottom: 1.35rem;
+  width: 2px;
+  background: var(--color-rule);
+}
+.timeline li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1rem 1fr;
+  column-gap: var(--space-4);
+  row-gap: 0.1rem;
+  align-items: baseline;
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--duration-fast) ease;
+}
+.timeline li::before {
+  content: "";
+  grid-row: 1 / span 2;
+  align-self: start;
+  justify-self: center;
+  margin-top: 0.4rem;
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -734,39 +743,33 @@ a:hover {
   border: 2px solid var(--color-accent);
   transition: background-color var(--duration-fast) ease;
 }
-
-.timeline li:hover::before {
-  background: var(--color-accent);
-}
+.timeline li:hover { background: var(--color-surface); }
+.timeline li:hover::before { background: var(--color-accent); }
 
 .timeline .when {
-  display: block;
+  grid-column: 2;
   font-family: var(--font-mono);
-  font-size: 0.825rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--color-accent);
-  margin-bottom: 0.15rem;
+  white-space: nowrap;
 }
-
 .timeline .what {
-  display: block;
-  color: var(--color-text);
-  font-size: var(--text-base);
+  grid-column: 2;
   line-height: 1.45;
+  color: var(--color-muted);
 }
+.timeline .role { color: var(--color-text-bold); font-weight: 600; }
+.timeline .org::before { content: "·" / ""; margin: 0 0.45em; color: var(--color-muted); }
 
 @media (min-width: 40rem) {
-  .timeline li {
-    display: grid;
-    grid-template-columns: 12rem 1fr;
-    align-items: baseline;
-    gap: var(--space-3);
-    padding-left: 0;
-  }
-
-  .timeline .when {
-    margin-bottom: 0;
-  }
+  .timeline li { grid-template-columns: 1rem 6.75rem 1fr; }
+  .timeline li::before { grid-row: 1; align-self: start; margin-top: calc((1.45em - 10px) / 2); }
+  .timeline .when { grid-column: 2; }
+  .timeline .what { grid-column: 3; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .timeline li, .timeline li::before { transition: none; }
 }
 
 /* ---- Chips (Tech lists) ------------------------------------------------- */
