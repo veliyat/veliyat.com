@@ -1342,7 +1342,7 @@ main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section):not(.
 .btn-lg { min-height: 3rem; padding: 0.75rem 1.5rem; font-size: 1rem; }
 .hero-cta { margin: 0; }
 @media (min-width: 40rem) {
-  .hero-compact { align-items: flex-end; justify-content: space-between; padding-top: var(--space-6); }
+  .hero-compact { align-items: center; justify-content: space-between; padding-top: var(--space-6); }
   .hero-compact .hero-text { flex: 1 1 auto; }
   .hero-cta { flex: none; }
 }
