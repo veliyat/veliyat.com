@@ -1207,3 +1207,16 @@ a:hover {
   .site-nav li:first-child a { margin-left: -0.125rem; }
   .site-nav li:last-child a { margin-right: -0.125rem; }
 }
+
+/* Inner pages: wide layout, but text blocks keep a comfortable line length */
+main > .wrap-wide > *:not(.hero-home):not(.cards-grid) {
+  max-width: var(--measure);
+}
+
+/* Print: the resume uses the full page width */
+@media print {
+  .wrap-wide,
+  main > .wrap-wide > * {
+    max-width: none;
+  }
+}
