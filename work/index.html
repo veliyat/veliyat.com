@@ -56,116 +56,114 @@
 <main id="main">
   <div class="wrap wrap-wide">
 
-    <section class="hero" aria-labelledby="work-heading">
+    <section class="hero-compact work-intro" aria-labelledby="work-heading">
       <div class="hero-text">
         <span class="eyebrow">Work</span>
         <h1 id="work-heading">Engineering work</h1>
-        <nav class="on-this-page no-print" aria-label="On this page">
-          <span class="on-this-page-label">On this page</span>
-          <ul>
-            <li><a href="#optivo-heading">Optivo Health</a></li>
-            <li><a href="#tutor-heading">AI Coding Tutor</a></li>
-            <li><a href="#education-work-heading">Hands-on technical work in developer education</a></li>
-            <li><a href="#agile-heading">Agile Infoways</a></li>
-            <li><a href="#earlier-heading">Earlier engineering</a></li>
-            <li><a href="#github-heading">Code on GitHub</a></li>
-          </ul>
-        </nav>
+        <p class="lede">Products I lead, client projects I built, and the code I teach with.</p>
       </div>
     </section>
 
-    <article class="section section-first prose" aria-labelledby="optivo-heading">
-      <h2 id="optivo-heading">Optivo Health</h2>
-      <p class="meta">Tech Lead · Nov 2025 – present</p>
-      <div class="project-action">
-        <a class="btn btn-external ext" href="https://www.optivohealth.com/product-tour" target="_blank" rel="noopener noreferrer">
-          <span>Take product tour</span>
-          <svg class="icon-external" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-          <span class="sr-only"> (opens in a new tab)</span>
-        </a>
+    <article class="case full" aria-labelledby="optivo-heading">
+      <div class="case-main">
+        <span class="eyebrow">Current role</span>
+        <h2 id="optivo-heading">Optivo Health</h2>
+        <p class="case-meta"><span class="case-when">Nov 2025 – present</span><span class="case-role">Tech Lead</span></p>
+        <p>Optivo is digital eye exam record software for independent optometry practices in South Africa. It is in its final stage before launch.</p>
+        <p>I am the primary technical owner of the application.</p>
+        <p class="case-note"><strong>How I work:</strong> Claude Code supports design, implementation and review. Design decisions and code review stay with me.</p>
+        <ul class="case-actions">
+          <li><a class="btn btn-secondary ext" href="https://www.optivohealth.com/product-tour" target="_blank" rel="noopener noreferrer">Take product tour<span class="ext-arrow" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        </ul>
       </div>
-      <p>Optivo is digital eye exam record software for independent optometry practices in South Africa. It is in its final stage before launch.</p>
-      <p>I am the primary technical owner of the application.</p>
-      <h3>What the product does</h3>
-      <ul>
-        <li>Exams that follow the optometrist's own flow, built from modules that can be included or left out</li>
-        <li>Structured digital clinical records in place of paper and free-text notes</li>
-        <li>Reports and referrals created from the exam record and saved to the patient file</li>
-        <li>Feedback notes, scans, fundus photos and additional tests saved to the patient file, with next steps kept visible</li>
-        <li>AI dictation that turns the clinician's spoken notes into structured exam data and clinical notes</li>
-      </ul>
-      <p><strong>Tools:</strong> <span class="chip">React 18</span><span class="chip-sep">, </span><span class="chip">TypeScript</span><span class="chip-sep">, </span><span class="chip">Vite</span><span class="chip-sep">, </span><span class="chip">Tailwind CSS</span><span class="chip-sep">, </span><span class="chip">shadcn/ui</span><span class="chip-sep">, </span><span class="chip">Radix UI</span><span class="chip-sep">, </span><span class="chip">React Router</span><span class="chip-sep">, </span><span class="chip">TanStack Query</span><span class="chip-sep">, </span><span class="chip">Supabase</span><span class="chip-sep">, </span><span class="chip">PostgreSQL</span><span class="chip-sep">, </span><span class="chip">Google Speech-to-Text</span><span class="chip-sep">, </span><span class="chip">Gemini on Vertex AI</span><span class="chip-sep">, </span><span class="chip">Vitest</span><span class="chip-sep">, </span><span class="chip">React Testing Library</span><span class="chip-sep">, </span><span class="chip">Playwright</span>.</p>
-      <p><strong>How I work:</strong> Claude Code supports design, implementation and review. Design decisions and code review stay with me.</p>
+      <div class="case-side">
+        <h3 class="case-label">What the product does</h3>
+        <ul class="ticks">
+          <li>Exams that follow the optometrist's own flow, built from modules that can be included or left out</li>
+          <li>Structured digital clinical records in place of paper and free-text notes</li>
+          <li>Reports and referrals created from the exam record and saved to the patient file</li>
+          <li>Feedback notes, scans, fundus photos and additional tests saved to the patient file, with next steps kept visible</li>
+          <li>AI dictation that turns the clinician's spoken notes into structured exam data and clinical notes</li>
+        </ul>
+        <h3 class="case-label">Tools</h3>
+        <ul class="chip-list" aria-label="Tools">
+          <li class="chip">React 18</li><li class="chip">TypeScript</li><li class="chip">Vite</li><li class="chip">Tailwind CSS</li><li class="chip">shadcn/ui</li><li class="chip">Radix UI</li><li class="chip">React Router</li><li class="chip">TanStack Query</li><li class="chip">Supabase</li><li class="chip">PostgreSQL</li><li class="chip">Google Speech-to-Text</li><li class="chip">Gemini on Vertex AI</li><li class="chip">Vitest</li><li class="chip">React Testing Library</li><li class="chip">Playwright</li>
+        </ul>
+      </div>
     </article>
 
-    <article class="section prose" aria-labelledby="tutor-heading">
-      <h2 id="tutor-heading" class="has-status">AI Coding Tutor <span class="status-pill">In development</span></h2>
-      <p class="meta">open source · Fightrons</p>
-      <div class="project-action">
-        <a class="btn btn-external ext" href="https://ai-coding-tutor-taupe.vercel.app/" target="_blank" rel="noopener noreferrer">
-          <span>Try AI Coding Tutor</span>
-          <svg class="icon-external" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-          <span class="sr-only"> (opens in a new tab)</span>
-        </a>
-        <p class="action-subtext">
-          <a class="ext" href="https://github.com/fightrons/ai-coding-tutor" target="_blank" rel="noopener noreferrer">
-            <svg class="icon-code" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            <span>Source on GitHub</span>
-            <span class="ext-arrow" aria-hidden="true">↗</span>
-            <span class="sr-only"> (opens in a new tab)</span>
-          </a>
-        </p>
+    <article class="case full" aria-labelledby="tutor-heading">
+      <div class="case-main">
+        <span class="eyebrow">Open source · Fightrons</span>
+        <h2 id="tutor-heading" class="has-status">AI Coding Tutor <span class="status-pill">In development</span></h2>
+        <p>An adaptive AI programming tutor that teaches JavaScript step by step. I built it as an open-source demo project under Fightrons.</p>
+        <p class="case-note"><strong>How it is organised:</strong> feature modules (auth, layout, lesson, editor, tutor), thin route pages, and a shared layer for UI components, utilities and types.</p>
+        <ul class="case-actions">
+          <li><a class="btn btn-primary ext" href="https://ai-coding-tutor-taupe.vercel.app/" target="_blank" rel="noopener noreferrer">Try AI Coding Tutor<span class="ext-arrow" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+          <li><a class="btn btn-secondary ext" href="https://github.com/fightrons/ai-coding-tutor" target="_blank" rel="noopener noreferrer">Source on GitHub<span class="ext-arrow" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        </ul>
       </div>
-      <p>An adaptive AI programming tutor that teaches JavaScript step by step. I built it as an open-source demo project under Fightrons.</p>
-      <h3>What it does</h3>
-      <ul>
-        <li>Learners start without registering and can resume on any device with an access code</li>
-        <li>Lessons run in an in-browser code editor that executes JavaScript and checks each solution with automated tests</li>
-        <li>An AI tutor gives hints instead of answers, and offers help when a learner is stuck</li>
-      </ul>
-      <p><strong>How it is organised:</strong> feature modules (auth, layout, lesson, editor, tutor), thin route pages, and a shared layer for UI components, utilities and types.</p>
-      <p><strong>Tools:</strong> <span class="chip">React</span><span class="chip-sep">, </span><span class="chip">TypeScript</span><span class="chip-sep">, </span><span class="chip">Tailwind CSS</span><span class="chip-sep">, </span><span class="chip">shadcn/ui</span><span class="chip-sep">, </span><span class="chip">Supabase (Auth, Postgres with Row-Level Security, Edge Functions)</span><span class="chip-sep">, </span><span class="chip">OpenAI GPT-4o-mini</span><span class="chip-sep">, </span><span class="chip">Monaco Editor</span><span class="chip-sep">, </span><span class="chip">Vitest</span><span class="chip-sep">, </span><span class="chip">Playwright</span>.</p>
+      <div class="case-side">
+        <h3 class="case-label">What it does</h3>
+        <ul class="ticks">
+          <li>Learners start without registering and can resume on any device with an access code</li>
+          <li>Lessons run in an in-browser code editor that executes JavaScript and checks each solution with automated tests</li>
+          <li>An AI tutor gives hints instead of answers, and offers help when a learner is stuck</li>
+        </ul>
+        <h3 class="case-label">Tools</h3>
+        <ul class="chip-list" aria-label="Tools">
+          <li class="chip">React</li><li class="chip">TypeScript</li><li class="chip">Tailwind CSS</li><li class="chip">shadcn/ui</li><li class="chip">Supabase (Auth, Postgres with Row-Level Security, Edge Functions)</li><li class="chip">OpenAI GPT-4o-mini</li><li class="chip">Monaco Editor</li><li class="chip">Vitest</li><li class="chip">Playwright</li>
+        </ul>
+      </div>
     </article>
 
-    <section class="section prose" aria-labelledby="education-work-heading">
-      <h2 id="education-work-heading">Hands-on technical work in developer education</h2>
-      <ul>
-        <li>MongoDB (2020 – 2023): built technical demos and labs in Python, MongoDB, Node.js and React, plus learning infrastructure and Python-based publishing scripts.</li>
-        <li>GitLab (2023 – 2024): built technical demos, labs and learning infrastructure for CI/CD and DevSecOps content.</li>
-      </ul>
+    <section class="section full" aria-labelledby="clients-heading">
+      <span class="eyebrow">Client projects</span>
+      <h2 id="clients-heading">Built for clients</h2>
+      <div class="client-grid">
+        <article class="client-card">
+          <span class="project-label">Website</span>
+          <h3>Ompree Financial</h3>
+          <p class="case-meta"><span class="case-when">Freelance</span><span class="case-role">Developer</span></p>
+          <p>An informational website for a financial advisor in Aurora, Illinois, presenting planning and advisory services from retirement rollovers to estate planning.</p>
+          <ul class="chip-list" aria-label="Tools"><li class="chip">WordPress</li><li class="chip">Elementor</li></ul>
+          <p class="project-links"><a class="ext" href="https://ompreefinancial.com/" target="_blank" rel="noopener noreferrer">ompreefinancial.com<span class="ext-arrow" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></p>
+        </article>
+        <article class="client-card">
+          <span class="project-label">Web app</span>
+          <h3>Option Automator</h3>
+          <p class="case-meta"><span class="case-when">Agile Infoways</span><span class="case-role">Project Lead</span></p>
+          <p>An AI-assisted options screener that ranks each trading day's opportunities against more than 140 criteria, for premium-selling, dividend, directional and stock-trading strategies. It started as a WordPress site and grew into the current app.</p>
+          <p>I led the project; my own coding on it was limited.</p>
+          <ul class="chip-list" aria-label="Tools"><li class="chip">D3.js</li><li class="chip">Cloudflare</li><li class="chip">WordPress</li></ul>
+          <p class="project-links"><a class="ext" href="https://www.optionautomator.com/" target="_blank" rel="noopener noreferrer">optionautomator.com<span class="ext-arrow" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></p>
+        </article>
+        <article class="client-card">
+          <span class="project-label">Web app</span>
+          <h3>LeGuard</h3>
+          <p class="case-meta"><span class="case-when">Agile Infoways</span><span class="case-role">Project Lead</span></p>
+          <p>Real-time tracking of legal work and fees, giving legal departments live visibility into outside counsel's activity and spend. The app also serves iOS, Android, Mac and Windows clients.</p>
+          <p>I led the project and made the architecture and build decisions; my own coding on it was limited.</p>
+          <ul class="chip-list" aria-label="Tools"><li class="chip">CakePHP</li><li class="chip">jQuery</li><li class="chip">Ajax</li><li class="chip">MySQL</li></ul>
+          <p class="project-links"><a class="ext" href="https://www.leguard.com/" target="_blank" rel="noopener noreferrer">leguard.com<span class="ext-arrow" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></p>
+        </article>
+      </div>
     </section>
 
-    <article class="section prose" aria-labelledby="agile-heading">
-      <h2 id="agile-heading">Agile Infoways</h2>
-      <p class="meta">Project Lead &amp; Trainer · Aug 2013 – Jul 2017</p>
-      <ul>
-        <li>Led a 30-person multidisciplinary team (business analysts, QA, designers, developers, a DBA and a network engineer), running delivery with Agile, Scrum and Kanban.</li>
-        <li>Delivered client web projects across Node.js, MongoDB, PHP / Laravel, Angular, React, Vue.js, Drupal, MySQL and PostgreSQL, hosted on AWS.</li>
-      </ul>
-    </article>
-
-    <section class="section prose" aria-labelledby="earlier-heading">
-      <h2 id="earlier-heading">Earlier engineering</h2>
-      <ul>
-        <li>Freelance web developer, Ahmedabad (Dec 2012 – Aug 2013): end-to-end web development covering database design, system architecture, coding, testing and delivery.</li>
-        <li>Infotrex Services, Ahmedabad (Jan 2012 – Dec 2012): developed web software in PHP, MySQL, PostgreSQL and jQuery with the web team; led R&amp;D practices in PHP and MySQL.</li>
-        <li>Sedulous Software Solutions, Ahmedabad (Jun 2009 – Dec 2011): built client web solutions with PHP, WordPress and jQuery.</li>
-      </ul>
-    </section>
-
-    <section class="section prose" aria-labelledby="github-heading">
+    <section class="section full" aria-labelledby="github-heading">
+      <span class="eyebrow">GitHub</span>
       <h2 id="github-heading">Code on GitHub</h2>
-      <p>These are teaching projects I built for workshops and tutorials, not production applications.</p>
-      <ul>
-        <li><a class="ext" href="https://github.com/veliyat/angular-8-shopping-cart" target="_blank" rel="noopener noreferrer">angular-8-shopping-cart<span class="ext-arrow" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>: the code for my Angular shopping cart video series (TypeScript).</li>
-        <li><a class="ext" href="https://github.com/veliyat/task-manager-elegant" target="_blank" rel="noopener noreferrer">task-manager-elegant<span class="ext-arrow" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>: React, Redux and Redux-Saga project used in corporate training.</li>
-        <li><a class="ext" href="https://github.com/veliyat/picstagram" target="_blank" rel="noopener noreferrer">picstagram<span class="ext-arrow" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>: an Instagram-style photo sharing app in Laravel and MySQL, built as a workshop code-along.</li>
-        <li><a class="ext" href="https://github.com/veliyat/contact-manager-laravel" target="_blank" rel="noopener noreferrer">contact-manager-laravel<span class="ext-arrow" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>: a contact manager with user and admin areas in Laravel and MySQL.</li>
+      <p class="section-intro">These are teaching projects I built for workshops and tutorials, not production applications.</p>
+      <ul class="repo-grid">
+        <li><a class="repo-card ext" href="https://github.com/veliyat/angular-8-shopping-cart" target="_blank" rel="noopener noreferrer"><span class="repo-name">angular-8-shopping-cart<span class="ext-arrow" aria-hidden="true">↗</span></span><span class="repo-desc">The code for my Angular shopping cart video series (TypeScript).</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a class="repo-card ext" href="https://github.com/veliyat/task-manager-elegant" target="_blank" rel="noopener noreferrer"><span class="repo-name">task-manager-elegant<span class="ext-arrow" aria-hidden="true">↗</span></span><span class="repo-desc">React, Redux and Redux-Saga project used in corporate training.</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a class="repo-card ext" href="https://github.com/veliyat/picstagram" target="_blank" rel="noopener noreferrer"><span class="repo-name">picstagram<span class="ext-arrow" aria-hidden="true">↗</span></span><span class="repo-desc">An Instagram-style photo sharing app in Laravel and MySQL, built as a workshop code-along.</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a class="repo-card ext" href="https://github.com/veliyat/contact-manager-laravel" target="_blank" rel="noopener noreferrer"><span class="repo-name">contact-manager-laravel<span class="ext-arrow" aria-hidden="true">↗</span></span><span class="repo-desc">A contact manager with user and admin areas in Laravel and MySQL.</span><span class="sr-only"> (opens in a new tab)</span></a></li>
       </ul>
       <p class="more"><a class="ext" href="https://github.com/veliyat" target="_blank" rel="noopener noreferrer">All repositories on GitHub<span class="ext-arrow" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></p>
     </section>
 
-    <nav class="next-card-wrap no-print" aria-label="Next page">
+    <nav class="next-card-wrap full no-print" aria-label="Next page">
       <a class="next-card" href="/teaching/">
         <span class="next-label">Next: Teaching</span>
         <span class="card-arrow" aria-hidden="true">→</span>
