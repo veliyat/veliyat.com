@@ -1669,10 +1669,9 @@ main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section):not(.
 /* Phones: icons instead of labels; Based in and Email each on their own line first, then LinkedIn and GitHub handles side by side */
 .rc-icon { display: none; }
 @media (max-width: 39.99rem) {
-  .rc-item:nth-child(1), .rc-item:nth-child(2) { grid-column: 1 / -1; }
+  .resume-contact { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-4); } /* Based in and Email share a line when they fit */
   .rc-item dt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .rc-item dd { margin: 0; }
-  .resume-contact { row-gap: var(--space-3); }
   .rc-item dd { display: flex; align-items: center; gap: 0.5rem; }
   .rc-icon { display: block; flex: none; color: var(--color-accent); }
   .rc-logo { color: var(--color-text-bold); } /* brand marks stay single-colour neutral, per LinkedIn and GitHub brand rules */
