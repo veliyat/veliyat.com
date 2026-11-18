@@ -1740,3 +1740,6 @@ main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section):not(.
   .chip-list { display: block; }
   .proj-links { display: none; }
 }
+
+/* Skill group names use the accent colour (brief v22) */
+.skill-name { color: var(--color-accent); }
