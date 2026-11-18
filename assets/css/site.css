@@ -1661,128 +1661,82 @@ main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section):not(.
 @media (min-width: 40rem) { .glance { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 64rem) { .glance { grid-template-columns: repeat(4, 1fr); } }
 
-/* Sections: heading column left, content right on wide screens */
-.rsec { display: grid; gap: var(--space-3); margin-top: var(--space-6); padding-top: var(--space-5); border-top: 1px solid var(--color-rule); scroll-margin-top: 5rem; }
-.rsec-title { margin: 0; font-size: 1.35rem; }
+/* Sections (v22): heading above the content, one column, reading width.
+   No side columns: the eye goes straight down the page. */
+.rsec { margin-top: var(--space-7); scroll-margin-top: 5rem; }
+.rsec-title { margin: 0 0 var(--space-5); font-size: var(--text-h2); letter-spacing: -0.02em; }
 .rsec-body { margin: 0; padding: 0; list-style: none; }
-@media (min-width: 56rem) {
-  .rsec { grid-template-columns: 12rem 1fr; gap: var(--space-6); }
-  .rsec-title { font-size: 1.15rem; padding-top: 0.15rem; }
-}
-.resume-summary { margin: 0; font-size: 1.1rem; line-height: 1.65; color: var(--color-text); max-width: 46rem; }
+.resume-summary { margin: 0; font-size: var(--text-lede); line-height: 1.6; color: var(--color-text); max-width: 46rem; }
 
-/* Skills */
-.skill-grid { display: grid; gap: var(--space-3); }
-.skill-row { display: grid; gap: 0.4rem; }
-.skill-name { margin: 0; font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-muted); }
+/* Skills: one row per group, the group name then a tag cloud of pills */
+.skill-grid { display: grid; gap: var(--space-4); max-width: 60rem; }
+.skill-row { display: grid; gap: 0.5rem; }
+.skill-name { margin: 0; font-size: var(--text-small); font-weight: 700; color: var(--color-text-bold); }
 @media (min-width: 40rem) { .skill-row { grid-template-columns: 10rem 1fr; align-items: baseline; gap: var(--space-4); } }
 
-/* Experience */
-.xp-list { display: grid; gap: 0; }
-.xp-item { display: grid; gap: 0.4rem; padding: var(--space-4) 0; border-top: 1px solid var(--color-rule); }
-.xp-item:first-child { border-top: 0; padding-top: 0; }
-.xp-side { display: flex; flex-wrap: wrap; gap: 0.2rem 0.75rem; align-items: baseline; }
-.xp-when { font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600; color: var(--color-accent); white-space: nowrap; }
-.xp-where { font-size: 0.8rem; color: var(--color-muted); }
-.xp-title { margin: 0; font-size: 1.1rem; font-weight: 700; color: var(--color-text-bold); line-height: 1.35; }
+/* Pills: fully rounded tags on the Resume page */
+.resume-page .chip-list, .rsec .chip-list { gap: 0.45rem; }
+.rsec .chip { padding: 0.3rem 0.85rem; border-radius: var(--radius-pill); font-size: 0.9rem; line-height: 1.4; }
+
+/* Experience: the site's career line, one role per stop */
+.xp-list { display: grid; gap: var(--space-6); max-width: 48rem; padding-left: var(--space-5) !important; border-left: 2px solid var(--color-rule); }
+.xp-item { position: relative; }
+.xp-item::before { content: ""; position: absolute; left: calc(-1 * var(--space-5) - 7px); top: 0.45rem; width: 12px; height: 12px; border-radius: 50%; background: var(--color-bg); border: 2px solid var(--color-accent); }
+.xp-item:first-child::before { background: var(--color-accent); }
+.xp-side { display: flex; flex-wrap: wrap; gap: 0 0.5rem; font-size: var(--text-small); }
+.xp-when { font-weight: 600; color: var(--color-accent); font-variant-numeric: tabular-nums; }
+.xp-where { color: var(--color-muted); }
+.xp-where::before { content: "·" / ""; margin-right: 0.5rem; }
+.xp-title { margin: 0.2rem 0 0; font-size: 1.2rem; font-weight: 700; line-height: 1.35; color: var(--color-text-bold); }
 .xp-org { font-weight: 500; color: var(--color-muted); }
 .xp-org::before { content: "·" / ""; margin: 0 0.45em; }
-.xp-body > p { margin: 0.4rem 0 0; color: var(--color-text); line-height: 1.6; }
-.xp-label { font-family: var(--font-mono); font-size: 0.7rem !important; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-muted) !important; margin-top: var(--space-3) !important; }
-.xp-points { margin: 0.5rem 0 0; padding-left: 1.1rem; display: grid; gap: 0.35rem; }
-.xp-points li { line-height: 1.55; color: var(--color-text); }
+.xp-body > p { margin: 0.6rem 0 0; line-height: 1.65; color: var(--color-text); }
+.xp-label { font-family: var(--font-mono); font-size: 0.7rem !important; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-muted) !important; margin-top: var(--space-4) !important; }
+.xp-points { margin: 0.6rem 0 0; padding-left: 1.15rem; display: grid; gap: 0.45rem; }
+.xp-points li { line-height: 1.65; color: var(--color-text); }
 .xp-points li::marker { color: var(--color-accent); }
-.xp-body .chip-list { margin-top: var(--space-3); }
-@media (min-width: 40rem) {
-  .xp-item { grid-template-columns: 10rem 1fr; gap: var(--space-4); }
-  .xp-side { flex-direction: column; gap: 0.15rem; padding-top: 0.25rem; }
-}
+.xp-body .chip-list { margin-top: var(--space-4); }
 
-/* Projects */
-.proj-list { display: grid; gap: var(--space-3); }
-.proj-item { padding: var(--space-4) var(--space-5); background: var(--color-surface); border: 1px solid var(--color-rule); border-radius: var(--radius); }
-.proj-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.75rem; }
-.proj-name { margin: 0; font-size: 1.05rem; color: var(--color-text-bold); }
-.proj-meta { font-size: 0.8rem; color: var(--color-muted); }
-.proj-item > p { margin: 0.4rem 0 0; font-size: var(--text-small); line-height: 1.6; color: var(--color-text); }
-.proj-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3); margin-top: var(--space-3); }
-.proj-links { display: flex; gap: var(--space-4); font-size: var(--text-small); font-weight: 600; }
+/* Projects: cards like Work's client cards, two across */
+.proj-list { display: grid; gap: var(--space-4); }
+@media (min-width: 48rem) { .proj-list { grid-template-columns: repeat(2, 1fr); } }
+.proj-item { display: flex; flex-direction: column; padding: var(--space-5); background: var(--color-surface); border: 1px solid var(--color-rule); border-radius: var(--radius); }
+.proj-head { display: flex; flex-direction: column; gap: 0.15rem; }
+.proj-name { margin: 0; font-size: 1.15rem; color: var(--color-text-bold); }
+.proj-meta { font-size: var(--text-small); color: var(--color-muted); }
+.proj-item > p { margin: 0.6rem 0 0; line-height: 1.6; color: var(--color-text); }
+.proj-foot { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-3); margin-top: auto; padding-top: var(--space-4); }
+.proj-links { display: flex; gap: var(--space-4); font-weight: 600; }
 .proj-links a { color: var(--color-accent); text-decoration: none; }
 .proj-links a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
 
 /* Education */
-.edu-list { display: grid; gap: var(--space-3); }
-.edu-list li { display: grid; gap: 0.2rem; }
-.edu-when { font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600; color: var(--color-accent); }
+.edu-list { display: grid; gap: var(--space-4); max-width: 48rem; }
+.edu-list li { display: grid; gap: 0.15rem; }
+.edu-when { font-size: var(--text-small); font-weight: 600; color: var(--color-accent); font-variant-numeric: tabular-nums; }
 .edu-what { line-height: 1.5; color: var(--color-muted); }
-.edu-what strong { color: var(--color-text-bold); font-weight: 600; }
-@media (min-width: 40rem) { .edu-list li { grid-template-columns: 10rem 1fr; gap: var(--space-4); align-items: baseline; } }
+.edu-what strong { color: var(--color-text-bold); font-weight: 700; }
 .bio-text { margin: 0; line-height: 1.65; color: var(--color-muted); max-width: 46rem; }
 
-/* Print and PDF (v22): the site's look on paper. Inter, the teal accent,
-   monospace section labels and tinted "at a glance" and project tiles.
-   White page; single column of real text so applicant tracking systems read it. */
+/* Print (fallback only; the downloadable resume is a separate file) */
 @media print {
-  body:has(.resume-head) {
-    --color-accent: #0d766e;
-    --color-accent-subtle: #e7f1f0;
-    --color-text: #171717;
-    --color-muted: #555555;
-    --color-rule: #dcdcd6;
-    font-family: var(--font-body);
-    font-size: 8.75pt;
-    line-height: 1.4;
-    color: #171717;
-    background: #ffffff;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-  @page { size: A4; margin: 13mm 14mm 12mm; }
-  .resume-head { padding-top: 0; border-top: 3pt solid #0d766e; padding-top: 7pt; }
-  .resume-head .eyebrow { display: none !important; }
-  .resume-head h1 { margin: 0; font-size: 22pt; font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; color: #0a0a0a; }
-  .resume-title { margin-top: 3pt; font-size: 11pt; font-weight: 600; color: #0d766e; }
-  .resume-contact { margin-top: 5pt; font-size: 8pt; color: #555; }
-  .resume-contact a { color: #171717; text-decoration: none; }
-  .resume-contact li + li::before { color: #0d766e; }
-
-  .glance { grid-template-columns: repeat(4, 1fr); gap: 5pt; margin-top: 9pt; }
-  .glance-item { gap: 1pt; padding: 5pt 7pt; background: #e7f1f0; border: 0; border-radius: 4pt; }
-  .glance-big { font-size: 10pt; color: #0d766e; }
-  .glance-small { font-size: 7.25pt; line-height: 1.3; color: #333; }
-
-  .rsec { grid-template-columns: 24mm 1fr; gap: 5mm; margin-top: 8pt; padding-top: 6pt; border-top: 0.75pt solid #dcdcd6; }
-  .rsec-title { padding-top: 1pt; font-family: var(--font-mono); font-size: 7pt; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #0d766e; break-after: avoid; }
-  .resume-summary { font-size: 9pt; line-height: 1.45; }
-
-  .skill-grid { gap: 3pt; }
-  .skill-row { grid-template-columns: 27mm 1fr; gap: 4pt; align-items: baseline; }
-  .skill-name { font-size: 6.5pt; letter-spacing: 0.1em; color: #555; }
-  /* Tags print as comma-separated text so parsers keep "React Router" and "TanStack Query" apart */
-  .skill-row .chip-list, .xp-body .chip-list, .proj-foot .chip-list { display: block; margin: 0; }
-  .chip-list .chip { display: inline; padding: 0; border: 0; background: none; font-size: 8.25pt; color: #24433f; }
-  .chip-list .chip + .chip::before { content: ", "; color: #555; }
-
-  .xp-item { grid-template-columns: 27mm 1fr; column-gap: 6pt; row-gap: 2pt; padding: 5pt 0; border-top-color: #e6e6e0; break-inside: avoid; }
-  .xp-side { flex-direction: column; gap: 1pt; padding-top: 1pt; }
-  .xp-when { font-family: var(--font-body); font-variant-numeric: tabular-nums; font-size: 7.5pt; font-weight: 600; color: #0d766e; }
-  .xp-where { font-size: 7.25pt; color: #555; }
-  .xp-title { font-size: 9.5pt; }
-  .xp-body > p, .xp-points li { font-size: 8.5pt; line-height: 1.4; }
-  .xp-body > p { margin-top: 2pt; }
-  .xp-points { gap: 1pt; margin-top: 2pt; padding-left: 9pt; }
-  .xp-label { font-size: 6.5pt !important; margin-top: 3pt !important; }
-  .xp-body .chip-list { margin-top: 3pt; }
-
-  .proj-list { gap: 4pt; }
-  .proj-item { padding: 5pt 7pt; background: #f6f6f3; border: 0; border-radius: 4pt; break-inside: avoid; }
-  .proj-name { font-size: 9.5pt; }
-  .proj-meta { font-size: 7.5pt; }
-  .proj-item > p { font-size: 8.5pt; line-height: 1.4; margin-top: 1pt; }
-  .proj-foot { margin-top: 3pt; }
+  .rsec { margin-top: 10pt; }
+  .rsec-title { margin-bottom: 4pt; font-size: 12pt; break-after: avoid; }
+  .resume-summary { font-size: 9.5pt; }
+  .glance { grid-template-columns: repeat(4, 1fr); gap: 4pt; margin-top: 6pt; }
+  .glance-item, .proj-item { padding: 4pt 6pt; background: none; border: 1px solid #ccc; border-radius: 3pt; break-inside: avoid; }
+  .glance-big { font-size: 10pt; } .glance-small { font-size: 7.5pt; }
+  .proj-list { grid-template-columns: 1fr 1fr; gap: 4pt; }
+  .skill-grid { gap: 2pt; }
+  .skill-row { grid-template-columns: 30mm 1fr; gap: 4pt; }
+  .skill-name { font-size: 8.5pt; }
+  .xp-list { gap: 7pt; max-width: none; }
+  .xp-item { break-inside: avoid; }
+  .xp-title { font-size: 10pt; }
+  .xp-side, .xp-body > p, .xp-points li, .proj-item > p { font-size: 8.5pt; line-height: 1.35; }
+  .xp-points { gap: 1pt; }
+  .chip-list .chip { display: inline; padding: 0; border: 0; background: none; font-size: 8.5pt; }
+  .chip-list .chip + .chip::before { content: ", "; }
+  .chip-list { display: block; }
   .proj-links { display: none; }
-
-  .edu-list { gap: 2pt; }
-  .edu-list li { grid-template-columns: 27mm 1fr; gap: 4pt; font-size: 8.5pt; }
-  .edu-when { font-family: var(--font-body); font-variant-numeric: tabular-nums; font-size: 7.5pt; font-weight: 600; color: #0d766e; }
 }
