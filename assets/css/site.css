@@ -1611,3 +1611,33 @@ main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section):not(.
 .case h2, .client-card h3, .full.section h2 { margin-bottom: 0; }
 .case h2 + .case-meta { margin-top: var(--space-3) !important; }
 .client-card h3 + .case-meta { margin-top: -0.25rem !important; }
+
+/* ==== Teaching page (brief v20); reuses the Work page blocks ==== */
+.first-block { margin-top: var(--space-5); }
+.client-card .ticks li { color: var(--color-muted); }
+.client-grid .client-card .ticks { margin-top: var(--space-1); }
+
+/* Corporate training: client lists by topic */
+.topics { gap: 0; }
+.topic-row { padding: var(--space-3) 0; border-top: 1px solid var(--color-rule); }
+.topic-row:first-child { border-top: 0; padding-top: 0; }
+.topic-row:last-child { padding-bottom: 0; }
+.topic-name {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.6rem;
+  margin: 0 0 var(--space-2); font-size: var(--text-small); font-weight: 600; color: var(--color-text-bold);
+}
+.topic-years { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600; color: var(--color-accent); }
+
+/* How I design a course: three numbered cards */
+.approach-grid { display: grid; gap: var(--space-4); margin: var(--space-5) 0 0; padding: 0; list-style: none; }
+.approach-card {
+  display: flex; flex-direction: column; gap: var(--space-3);
+  padding: var(--space-5);
+  background: var(--color-surface); border: 1px solid var(--color-rule); border-radius: var(--radius);
+}
+.approach-num { font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600; color: var(--color-accent); letter-spacing: 0.1em; }
+.approach-card p { margin: 0; font-size: var(--text-small); line-height: 1.6; color: var(--color-text); }
+@media (min-width: 48rem) { .approach-grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* A panel with no side column */
+@media (min-width: 56rem) { .case-single { grid-template-columns: 1fr; } .case-single .case-main { max-width: 44rem; } }
