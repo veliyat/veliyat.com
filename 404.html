@@ -30,12 +30,31 @@
 
 <main id="main">
   <div class="wrap wrap-wide">
-    <section class="hero" aria-labelledby="notfound-heading">
-      <div class="hero-text">
+    <section class="nf full" aria-labelledby="notfound-heading">
+      <div class="nf-text">
+        <span class="eyebrow">Error 404</span>
         <h1 id="notfound-heading">Page not found</h1>
-        <p><a href="/">Go to the home page</a></p>
+        <p class="nf-lede">This page doesn't exist, or it has moved.</p>
+        <p class="nf-actions"><a class="btn btn-primary" href="/">Go to the home page</a></p>
+      </div>
+      <div class="nf-term" aria-hidden="true">
+        <div class="nf-term-bar"><span></span><span></span><span></span></div>
+        <pre class="nf-term-body"><span class="nf-prompt">$</span> curl -I veliyat.com/this-page
+<span class="nf-status">HTTP/2 404</span>
+content-type: text/html
+x-hint: try the home page<span class="nf-cursor"></span></pre>
       </div>
     </section>
+
+    <nav class="nf-links full" aria-labelledby="nf-links-heading">
+      <h2 id="nf-links-heading" class="nf-links-title">Or try one of these</h2>
+      <ul class="nf-grid">
+        <li><a class="nf-card" href="/work/"><span class="nf-card-name">Work</span><span class="nf-card-line">Engineering work</span><span class="nf-arrow" aria-hidden="true">→</span></a></li>
+        <li><a class="nf-card" href="/teaching/"><span class="nf-card-name">Teaching</span><span class="nf-card-line">Teaching developers</span><span class="nf-arrow" aria-hidden="true">→</span></a></li>
+        <li><a class="nf-card" href="/videos/"><span class="nf-card-name">Videos</span><span class="nf-card-line">Tutorials and training sessions</span><span class="nf-arrow" aria-hidden="true">→</span></a></li>
+        <li><a class="nf-card" href="/resume/"><span class="nf-card-name">Resume</span><span class="nf-card-line">Career, skills and projects</span><span class="nf-arrow" aria-hidden="true">→</span></a></li>
+      </ul>
+    </nav>
   </div>
 </main>
 
