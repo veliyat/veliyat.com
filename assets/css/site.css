@@ -1617,16 +1617,31 @@ main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section):not(.
 .client-card .ticks li { color: var(--color-muted); }
 .client-grid .client-card .ticks { margin-top: var(--space-1); }
 
-/* Corporate training: client lists by topic */
-.topics { gap: 0; }
-.topic-row { padding: var(--space-3) 0; border-top: 1px solid var(--color-rule); }
-.topic-row:first-child { border-top: 0; padding-top: 0; }
-.topic-row:last-child { padding-bottom: 0; }
-.topic-name {
-  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.6rem;
-  margin: 0 0 var(--space-2); font-size: var(--text-small); font-weight: 600; color: var(--color-text-bold);
-}
-.topic-years { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600; color: var(--color-accent); }
+/* Corporate training (v23): topics strip, then every company once with the topics it was trained in */
+.training { margin-top: var(--space-7); }
+.training h2 { margin-top: var(--space-2); }
+.training-lede { margin: var(--space-4) 0 0; max-width: 44rem; font-size: var(--text-lede); line-height: 1.55; color: var(--color-text); }
+.training-label { margin: var(--space-6) 0 0; font-size: 1rem; font-weight: 700; color: var(--color-accent); }
+.training-note { margin: 0.35rem 0 0; font-size: var(--text-small); color: var(--color-muted); }
+
+.topic-strip { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-3); margin: var(--space-3) 0 0; padding: 0; list-style: none; }
+@media (min-width: 64rem) { .topic-strip { grid-template-columns: repeat(4, 1fr); } }
+.topic-card { display: flex; flex-direction: column; gap: 0.2rem; padding: var(--space-3) var(--space-4); background: var(--color-surface); border: 1px solid var(--color-rule); border-radius: var(--radius); }
+.topic-title { font-weight: 700; color: var(--color-text-bold); line-height: 1.35; }
+.topic-years { font-size: var(--text-small); font-weight: 600; color: var(--color-accent); font-variant-numeric: tabular-nums; }
+
+.client-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 var(--space-4); margin: var(--space-3) 0 0; padding: 0; list-style: none; }
+@media (min-width: 64rem) { .client-list { grid-template-columns: repeat(3, 1fr); } }
+.client-item { display: flex; flex-direction: column; gap: 0.15rem; padding: var(--space-3) 0; border-top: 1px solid var(--color-rule); }
+.client-name { font-size: 1rem; font-weight: 700; color: var(--color-text-bold); }
+.client-where { font-size: var(--text-small); font-weight: 500; color: var(--color-muted); }
+.client-where::before { content: "·" / ""; margin: 0 0.4em; }
+.client-topics { font-size: 0.875rem; color: var(--color-muted); line-height: 1.5; }
+
+.training-extra { display: grid; gap: 0 var(--space-6); }
+@media (min-width: 48rem) { .training-extra { grid-template-columns: 1fr 1fr; } }
+.training-extra .chip-list { margin-top: var(--space-3); gap: 0.45rem; }
+.training-extra .chip { padding: 0.3rem 0.85rem; border-radius: var(--radius-pill); font-size: 0.9rem; }
 
 /* How I design a course: three numbered cards */
 .approach-grid { display: grid; gap: var(--space-4); margin: var(--space-5) 0 0; padding: 0; list-style: none; }
@@ -1641,6 +1656,7 @@ main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section):not(.
 
 /* A panel with no side column */
 @media (min-width: 56rem) { .case-single { grid-template-columns: 1fr; } .case-single .case-main { max-width: 44rem; } }
+@media (min-width: 40rem) { .topic-card { padding: var(--space-4) var(--space-5); } .client-name { font-size: 1.05rem; } .client-topics { font-size: var(--text-small); } }
 
 /* ==== Resume page (brief v21): recruiter-first layout ==== */
 .resume-head { padding-top: var(--space-6); }
