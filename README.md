@@ -54,6 +54,10 @@ Open [http://localhost:8000](http://localhost:8000). Run from the repository roo
 - **Print Optimization**: Dedicated `@media print` rules on `/resume/` engineered to fit cleanly onto exactly two A4 pages.
 - **Consistent Navigation**: Header navigation (`Home`, `Work`, `Teaching`, `Videos`, `Resume`) and footer links are structurally consistent across all pages, with `aria-current="page"` set on the active page.
 
+## Credits
+
+Icons: GitHub mark from Octicons (@primer/octicons, MIT); LinkedIn logo from Bootstrap Icons (MIT).
+
 ## Site Metadata & Address
 
 `https://veliyat.com` is used in canonical `<link>`, Open Graph, Twitter Cards, and schema.org `ProfilePage` JSON-LD structured data. Each page maintains this block under `SITE-ADDRESS`.

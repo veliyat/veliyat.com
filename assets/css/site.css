@@ -1666,21 +1666,19 @@ main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section):not(.
 .resume-contact { display: grid; grid-template-columns: repeat(2, auto); justify-content: start; gap: var(--space-4) var(--space-5); margin: var(--space-5) 0 0; padding: var(--space-4) 0; border-top: 1px solid var(--color-rule); border-bottom: 1px solid var(--color-rule); max-width: 48rem; }
 @media (min-width: 40rem) { .resume-contact { grid-template-columns: repeat(4, auto); justify-content: start; column-gap: var(--space-6); } }
 .rc-item { min-width: 0; }
-/* Phones: no labels; LinkedIn and GitHub links name themselves; Email and Based in share the left column */
-.rc-name { display: none; }
+/* Phones: icons instead of labels; Based in and Email each on their own line first, then LinkedIn and GitHub handles side by side */
 .rc-icon { display: none; }
 @media (max-width: 39.99rem) {
-  .rc-item:nth-child(3) { order: 4; } .rc-item:nth-child(4) { order: 3; }
+  .rc-item:nth-child(1), .rc-item:nth-child(2) { grid-column: 1 / -1; }
   .rc-item dt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .rc-item dd { margin: 0; }
-  .rc-handle { display: none; } .rc-name { display: inline; }
   .resume-contact { row-gap: var(--space-3); }
   .rc-item dd { display: flex; align-items: center; gap: 0.5rem; }
   .rc-icon { display: block; flex: none; color: var(--color-accent); }
+  .rc-logo { color: var(--color-text-bold); } /* brand marks stay single-colour neutral, per LinkedIn and GitHub brand rules */
 }
 .rc-item dt { font-family: var(--font-mono); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-muted); }
 .rc-item dd { margin: 0.25rem 0 0; font-weight: 600; color: var(--color-text-bold); white-space: nowrap; }
-@media (max-width: 23.74rem) { .resume-contact { grid-template-columns: 1fr; } .rc-item:nth-child(n) { order: 0; } }
 .rc-item a { color: inherit; text-decoration: none; }
 .rc-item a:hover, .rc-item a:focus-visible { color: var(--color-accent); text-decoration: underline; text-underline-offset: 0.2em; }
 .print-only { display: none; }
