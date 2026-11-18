@@ -75,6 +75,6 @@ Open [http://localhost:8000](http://localhost:8000). Run from the repository roo
 - [ ] Three selected videos for Home: titles and YouTube URLs.
 - [ ] Videos page: exact titles, URLs, and group categorisation (AI & Python, React & Redux, JavaScript & Node.js, Angular).
 - [ ] Work: update Optivo launch-status copy when Optivo goes live.
-- [ ] Resume: replace Google Drive PDF link before launch if a new revision is exported.
+- [ ] Resume: [RAVI: supply the chosen resume PDF] and place it at `resume/ravi-veliyat-resume.pdf` (the Download PDF button already points there; Google Drive link removed).
 - [ ] Review social share card `assets/img/social.jpg` (1200 × 630).
 - [ ] Verify Fightrons wording against `fightrons.com` prior to public launch.
