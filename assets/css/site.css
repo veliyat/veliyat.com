@@ -57,16 +57,12 @@
   --radius-sm: 0.35rem;
   --radius-pill: 9999px;
 
-  --portrait-w: 7.5rem;
-  --portrait-h: 9.375rem;
   --duration-fast: 150ms;
 }
 
 @media (min-width: 40rem) {
   :root {
     --gutter: 2rem;
-    --portrait-w: 14rem;
-    --portrait-h: 17.5rem;
   }
 }
 
@@ -283,38 +279,10 @@ a:hover {
     padding-top: var(--space-7);
   }
 
-  .hero .portrait {
-    order: 2;
-  }
-
   .hero .hero-text {
     flex: 1;
     max-width: 36rem;
   }
-}
-
-/* Portrait frame */
-.portrait {
-  flex: none;
-  width: var(--portrait-w);
-  height: var(--portrait-h);
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-rule);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-}
-
-.portrait picture,
-.portrait img {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.portrait img {
-  object-fit: cover;
-  object-position: center;
 }
 
 /* ---- Home Hero with Portrait Background --------------------------------- */
@@ -347,14 +315,16 @@ a:hover {
 }
 
 @media (min-width: 48rem) {
+  /* The portrait stands on the hero's bottom border */
   .hero-home {
-    background-position: right clamp(2rem, 5vw, 5rem) center;
+    background-position: right clamp(2rem, 5vw, 5rem) bottom;
     background-size: auto min(92%, 26rem);
-    padding-top: var(--space-7);
-    padding-bottom: var(--space-6);
+    padding-top: 3.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-rule);
     min-height: 26rem;
     display: flex;
-    align-items: center;
+    align-items: flex-end; /* text sits near the line, so the gap under the buttons is just padding-bottom */
   }
 
   .hero-home .hero-text {
@@ -365,10 +335,9 @@ a:hover {
 
 @media (min-width: 64rem) {
   .hero-home {
-    background-position: right clamp(3rem, 7vw, 7rem) center;
+    background-position: right clamp(3rem, 7vw, 7rem) bottom;
     background-size: auto min(94%, 28rem);
     min-height: 28rem;
-    padding-top: calc(var(--space-7) + 6rem);
   }
 }
 
@@ -1064,9 +1033,12 @@ a:hover {
     background-position: right 1.5rem top 1.75rem;
     background-size: auto 9.5rem;
   }
+  /* Phones: the portrait sits beside the name, so the line runs under that row and the portrait stands on it */
   .hero-home h1 {
+    box-sizing: content-box;
     min-height: 9.5rem;
     padding-right: 10.25rem;
+    border-bottom: 1px solid var(--color-rule);
     display: flex;
     align-items: center;
   }
@@ -1734,7 +1706,6 @@ main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section):not(.
 @media (prefers-reduced-motion: reduce) { .nf-card { transition: none; } .nf-card:hover, .nf-card:focus-visible { transform: none; } }
 
 /* ==== Home v26: Option B hero and three "doors" ==== */
-.hero-home .support .hl { font-weight: 700; color: var(--color-text-bold); }
 .doors { margin-top: var(--space-7); }
 .doors .cards-grid { margin-top: 0 !important; }
 .doors-title { margin: 0; font-size: 1rem; font-weight: 700; letter-spacing: 0; color: var(--color-accent); }
@@ -1762,3 +1733,22 @@ main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section):not(.
 .solved-label { margin: var(--space-4) 0 0; font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent); }
 .solved-label + p { margin: 0.3rem 0 0; font-size: var(--text-small); line-height: 1.6; color: var(--color-text); }
 .solved-card .chip-list { margin-top: auto; padding-top: var(--space-4); }
+
+/* Employer logos under the hero (v28): MongoDB and GitLab, single colour */
+.hero-logos { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.25rem; margin-top: var(--space-6); }
+.hero-logos-label { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-muted); }
+.hero-logos-list { display: flex; align-items: center; gap: 1.75rem; margin: 0; padding: 0; list-style: none; }
+.hero-logos .logo { display: block; width: auto; color: var(--color-text-bold); opacity: 0.8; }
+.logo-mongodb { height: 1.9rem; }
+.logo-gitlab { height: 1.4rem; }
+.hero-home .hero-text > .hero-logos { margin-top: var(--space-4); }
+
+/* Home hero type scale (smaller than the shared h1 and lede, which inner pages keep) */
+.hero-home h1 { font-size: clamp(2.1rem, 1.7rem + 2vw, 3rem); }
+.hero-home .lede { font-size: clamp(1.1rem, 1rem + 0.4vw, 1.25rem); }
+.hero-home .hero-logos-label { font-size: 0.65rem; }
+.hero-home .logo-mongodb { height: 1.6rem; }
+.hero-home .logo-gitlab { height: 1.2rem; }
+@media (max-width: 47.99rem) {
+  .hero-home .hero-logos-label { flex-basis: 100%; } /* B1: on phones the label sits above the logos */
+}
