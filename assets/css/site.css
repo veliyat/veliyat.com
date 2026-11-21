@@ -1713,17 +1713,28 @@ main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section):not(.
 }
 @media (prefers-reduced-motion: reduce) { .door .door-cta { transition: none; } }
 
-/* Problems I solved */
+/* Problems I solved (v31): one full-width row per case for reading.
+   Wide screens: name and tools on the left, Problem and Solution side by side at body size.
+   Phones: everything stacked. Solution carries an accent bar, Problem a neutral one. */
 .solved { margin-top: var(--space-8, 5rem); }
 .solved h2 { margin-top: var(--space-2); }
 .solved-grid { display: grid; gap: var(--space-4); margin: var(--space-5) 0 0; padding: 0; list-style: none; }
-@media (min-width: 52rem) { .solved-grid { grid-template-columns: repeat(3, 1fr); gap: var(--space-5); } }
-.solved-card { display: flex; flex-direction: column; padding: var(--space-5); background: var(--color-surface); border: 1px solid var(--color-rule); border-radius: var(--radius); }
-.solved-org { font-size: var(--text-small); font-weight: 600; color: var(--color-muted); }
-.solved-card h3 { margin: 0.35rem 0 0; font-size: 1.15rem; line-height: 1.35; color: var(--color-text-bold); }
-.solved-label { margin: var(--space-4) 0 0; font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent); }
-.solved-label + p { margin: 0.3rem 0 0; font-size: var(--text-small); line-height: 1.6; color: var(--color-text); }
-.solved-card .chip-list { margin-top: auto; padding-top: var(--space-4); }
+.solved-card { display: grid; gap: var(--space-4); padding: var(--space-5); background: var(--color-surface); border: 1px solid var(--color-rule); border-radius: var(--radius); }
+.solved-org { display: block; font-size: var(--text-small); font-weight: 600; color: var(--color-muted); }
+.solved-card h3 { margin: 0.3rem 0 0; font-size: 1.25rem; line-height: 1.3; letter-spacing: -0.01em; color: var(--color-text-bold); }
+.solved-body { display: grid; gap: var(--space-4); }
+.solved-part { padding-left: var(--space-4); border-left: 3px solid var(--color-rule); }
+.solved-solution { border-left-color: var(--color-accent); }
+.solved-label { margin: 0; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-muted); }
+.solved-solution .solved-label { color: var(--color-accent); }
+.solved-part p:not(.solved-label) { margin: 0.35rem 0 0; font-size: var(--text-base); line-height: 1.65; color: var(--color-text); }
+.solved-card .chip-list { margin: 0; padding: 0; }
+@media (min-width: 52rem) {
+  .solved-card { grid-template-columns: 15rem 1fr; grid-template-areas: "head body" "chips body"; grid-template-rows: auto 1fr; column-gap: var(--space-6); row-gap: var(--space-4); align-items: start; padding: var(--space-6); }
+  .solved-head { grid-area: head; }
+  .solved-body { grid-area: body; grid-template-columns: 1fr 1fr; gap: var(--space-5); }
+  .solved-card .chip-list { grid-area: chips; align-self: start; }
+}
 
 /* Employer logos under the hero (v28): MongoDB and GitLab, single colour */
 .hero-logos { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.25rem; margin-top: var(--space-6); }
@@ -1742,4 +1753,12 @@ main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section):not(.
 .hero-home .logo-gitlab { height: 1.2rem; }
 @media (max-width: 47.99rem) {
   .hero-home .hero-logos-label { flex-basis: 100%; } /* B1: on phones the label sits above the logos */
+}
+
+/* Problems I solved: the case title stands out; tool tags are smaller, muted and set apart from it */
+.solved-card h3 { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.015em; }
+.solved-card .chip-list { gap: 0.3rem; }
+.solved-card .chip { padding: 0.1rem 0.45rem; font-size: 0.75rem; color: var(--color-muted); }
+@media (min-width: 52rem) {
+  .solved-card .chip-list { margin-top: var(--space-4); } /* plus the card's row gap: about 2rem below the title */
 }
