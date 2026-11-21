@@ -1564,8 +1564,7 @@ main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section):not(.
 .resume-head h1 { margin-top: var(--space-2); font-size: clamp(2.4rem, 1.8rem + 2.5vw, 3.5rem); line-height: 1.05; }
 .resume-title { margin: var(--space-2) 0 0; font-size: clamp(1.15rem, 1rem + 0.6vw, 1.4rem); font-weight: 600; color: var(--color-text); }
 /* Contact (v24): labelled grid, 2 × 2 on phones, one row of four on wider screens */
-.resume-contact { display: grid; grid-template-columns: repeat(2, auto); justify-content: start; gap: var(--space-4) var(--space-5); margin: var(--space-5) 0 0; padding: var(--space-4) 0; border-top: 1px solid var(--color-rule); border-bottom: 1px solid var(--color-rule); max-width: 48rem; }
-@media (min-width: 40rem) { .resume-contact { grid-template-columns: repeat(4, auto); justify-content: start; column-gap: var(--space-6); } }
+.resume-contact { display: flex; flex-wrap: wrap; gap: var(--space-4) var(--space-6); margin: var(--space-5) 0 0; padding: var(--space-4) 0 0; border-top: 1px solid var(--color-rule); }
 .rc-item { min-width: 0; }
 /* Phones: icons instead of labels; Based in and Email each on their own line first, then LinkedIn and GitHub handles side by side */
 .rc-icon { display: none; }
@@ -1575,32 +1574,26 @@ main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section):not(.
   .rc-item dd { margin: 0; }
   .rc-item dd { display: flex; align-items: center; gap: 0.5rem; }
   .rc-icon { display: block; flex: none; color: var(--color-accent); }
-  .rc-logo { color: var(--color-text-bold); } /* brand marks stay single-colour neutral, per LinkedIn and GitHub brand rules */
+  .rc-logo { color: var(--color-text-bold); } /* brand marks stay single-colour neutral, per LinkedIn, GitHub and YouTube brand rules */
 }
 .rc-item dt { font-family: var(--font-mono); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-muted); }
 .rc-item dd { margin: 0.25rem 0 0; font-weight: 600; color: var(--color-text-bold); white-space: nowrap; }
 .rc-item a { color: inherit; text-decoration: none; }
 .rc-item a:hover, .rc-item a:focus-visible { color: var(--color-accent); text-decoration: underline; text-underline-offset: 0.2em; }
 .print-only { display: none; }
-@media print { .print-only { display: block; } .rc-icon { display: none !important; } .resume-contact { grid-template-columns: repeat(5, auto); gap: 2pt 14pt; padding: 4pt 0; margin-top: 6pt; } .rc-item dt { font-size: 6.5pt; } .rc-item dd { font-size: 8.5pt; margin: 0; } }
-.resume-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin: var(--space-5) 0 0; padding: 0; list-style: none; }
+@media print { .print-only { display: block; } .rc-icon { display: none !important; } .resume-contact { gap: 2pt 14pt; padding: 4pt 0; margin-top: 6pt; } .rc-item dt { font-size: 6.5pt; } .rc-item dd { font-size: 8.5pt; margin: 0; } }
+.resume-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin: var(--space-6) 0 0; padding: 0; list-style: none; }
+.resume-actions-end { margin-top: var(--space-7); }
 .resume-actions li { display: flex; }
 .resume-actions .btn { min-height: 2.75rem; padding: 0.6rem 1.25rem; font-size: var(--text-small); }
-
-/* At a glance */
-.glance { display: grid; gap: var(--space-3); margin-top: var(--space-6); }
-.glance-item { display: flex; flex-direction: column; gap: 0.3rem; padding: var(--space-4) var(--space-5); background: var(--color-surface); border: 1px solid var(--color-rule); border-radius: var(--radius); }
-.glance-big { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.02em; color: var(--color-text-bold); }
-.glance-small { font-size: var(--text-small); line-height: 1.5; color: var(--color-muted); }
-@media (min-width: 40rem) { .glance { grid-template-columns: 1fr 1fr; } }
-@media (min-width: 64rem) { .glance { grid-template-columns: repeat(4, 1fr); } }
 
 /* Sections (v22): heading above the content, one column, reading width.
    No side columns: the eye goes straight down the page. */
 .rsec { margin-top: var(--space-7); scroll-margin-top: 5rem; }
 .rsec-title { margin: 0 0 var(--space-5); font-size: var(--text-h2); letter-spacing: -0.02em; }
 .rsec-body { margin: 0; padding: 0; list-style: none; }
-.resume-summary { margin: 0; font-size: var(--text-lede); line-height: 1.6; color: var(--color-text); max-width: 46rem; }
+.resume-summary { margin: 0; font-size: var(--text-base); font-weight: 400; line-height: 1.7; color: var(--color-text); max-width: none; }
+.resume-summary strong { font-weight: 700; color: var(--color-text-bold); }
 
 /* Skills: one row per group, the group name then a tag cloud of pills */
 .skill-grid { display: grid; gap: var(--space-4); max-width: 60rem; }
@@ -1657,9 +1650,7 @@ main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section):not(.
   .rsec { margin-top: 10pt; }
   .rsec-title { margin-bottom: 4pt; font-size: 12pt; break-after: avoid; }
   .resume-summary { font-size: 9.5pt; }
-  .glance { grid-template-columns: repeat(4, 1fr); gap: 4pt; margin-top: 6pt; }
-  .glance-item, .proj-item { padding: 4pt 6pt; background: none; border: 1px solid #ccc; border-radius: 3pt; break-inside: avoid; }
-  .glance-big { font-size: 10pt; } .glance-small { font-size: 7.5pt; }
+  .proj-item { padding: 4pt 6pt; background: none; border: 1px solid #ccc; border-radius: 3pt; break-inside: avoid; }
   .proj-list { grid-template-columns: 1fr 1fr; gap: 4pt; }
   .skill-grid { gap: 2pt; }
   .skill-row { grid-template-columns: 30mm 1fr; gap: 4pt; }

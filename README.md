@@ -56,7 +56,7 @@ Open [http://localhost:8000](http://localhost:8000). Run from the repository roo
 
 ## Credits
 
-Icons: GitHub mark from Octicons (@primer/octicons, MIT); LinkedIn logo from Bootstrap Icons (MIT).
+Icons: GitHub mark from Octicons (@primer/octicons, MIT); LinkedIn and YouTube logos from Bootstrap Icons (MIT).
 
 Logos: MongoDB logo from @leafygreen-ui/logo (Apache-2.0); GitLab logo from @gitlab/svgs (MIT). Trademarks belong to their owners; used to name Ravi's former employers.
 
@@ -81,6 +81,6 @@ Logos: MongoDB logo from @leafygreen-ui/logo (Apache-2.0); GitLab logo from @git
 - [ ] Three selected videos for Home: titles and YouTube URLs.
 - [ ] Videos page: exact titles, URLs, and group categorisation (AI & Python, React & Redux, JavaScript & Node.js, Angular).
 - [ ] Work: update Optivo launch-status copy when Optivo goes live.
-- [ ] Resume: [RAVI: supply the chosen resume PDF] and place it at `resume/ravi-veliyat-resume.pdf` (the Download PDF button already points there; Google Drive link removed).
+- [ ] Resume: Download PDF points to Google Drive for now; switch both buttons to /resume/ravi-veliyat-resume.pdf when Ravi adds the file.
 - [ ] Review social share card `assets/img/social.jpg` (1200 × 630).
 - [ ] Verify Fightrons wording against `fightrons.com` prior to public launch.
