@@ -1513,6 +1513,33 @@ main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section):not(.
 .case h2 + .case-meta { margin-top: var(--space-3) !important; }
 .client-card h3 + .case-meta { margin-top: -0.25rem !important; }
 
+/* Work project panels (v32): heading across the top, description and feature list side by side
+   at the same body size, tools in their own row at the bottom. Scoped to .case-project so the
+   Teaching page's panels are unchanged. */
+.case-project { gap: var(--space-5); }
+.case-project .case-head h2 { margin-top: var(--space-2); }
+.case-project .case-meta { margin-top: var(--space-2) !important; gap: 0.25rem 0.6rem; }
+.case-project .case-meta .case-when { font-family: inherit; font-size: var(--text-base); font-weight: 600; color: var(--color-accent); }
+.case-project .case-meta .case-role { font-size: var(--text-base); }
+.case-project .case-meta .case-when::after { content: "·"; margin-left: 0.6rem; color: var(--color-muted); }
+.case-project .case-main > p:first-child { margin-top: 0; }
+.case-project .case-main > p:not(.case-note) { font-size: var(--text-base); line-height: 1.7; }
+.case-project .case-note { margin-top: var(--space-4) !important; padding-left: var(--space-4); border-left: 3px solid var(--color-accent); font-size: var(--text-base); line-height: 1.65; color: var(--color-text) !important; }
+.case-project .case-label { font-family: inherit; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; color: var(--color-muted); }
+.case-project .case-side { gap: var(--space-3); }
+.case-project .ticks { gap: 0.8rem; }
+.case-project .ticks li { font-size: var(--text-base); line-height: 1.6; padding-left: 1.6rem; }
+.case-project .ticks li::before { top: 0.5em; }
+.case-project .case-tools { display: grid; gap: var(--space-3); padding-top: var(--space-5); border-top: 1px solid var(--color-rule); }
+.case-project .case-tools .chip-list { margin: 0; }
+@media (min-width: 56rem) {
+  .case-project { grid-template-columns: 1fr 1fr; grid-template-areas: "head head" "main side" "tools tools"; column-gap: var(--space-7); row-gap: var(--space-5); }
+  .case-project .case-head { grid-area: head; }
+  .case-project .case-main { grid-area: main; }
+  .case-project .case-side { grid-area: side; }
+  .case-project .case-tools { grid-area: tools; grid-template-columns: 7rem 1fr; align-items: baseline; }
+}
+
 /* ==== Teaching page (brief v20); reuses the Work page blocks ==== */
 .first-block { margin-top: var(--space-5); }
 .client-card .ticks li { color: var(--color-muted); }
