@@ -58,7 +58,7 @@ Open [http://localhost:8000](http://localhost:8000). Run from the repository roo
 
 Icons: GitHub mark from Octicons (@primer/octicons, MIT); LinkedIn and YouTube logos from Bootstrap Icons (MIT).
 
-Logos: MongoDB logo from @leafygreen-ui/logo (Apache-2.0); GitLab logo from @gitlab/svgs (MIT). Trademarks belong to their owners; used to name Ravi's former employers.
+Logos: MongoDB logo from @leafygreen-ui/logo (Apache-2.0); GitLab logo from @gitlab/svgs (MIT). Trademarks belong to their owners; used to name Ravi's former employers in the Home "Previously at" row and on the Teaching role cards.
 
 ## Site Metadata & Address
 
