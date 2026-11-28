@@ -1860,4 +1860,10 @@ main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section):not(.
   .btn-primary.btn-hero { box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.7); }
   .btn-primary.btn-hero:hover { box-shadow: 0 8px 18px -6px rgba(0, 0, 0, 0.8); }
 }
-@media print { :root { --color-muted: #333333; } }
+
+/* Print: keep the resume's print colours and label sizes as they were before round 1 */
+@media print {
+  :root { --color-muted: #333333; }
+  .rc-item dt { font-size: 6.5pt; }
+  .xp-label { font-size: 0.7rem !important; }
+}
