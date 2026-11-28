@@ -1803,3 +1803,60 @@ main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section):not(.
 /* Teaching v35: use case under "How I design a course", reusing the Home problem-and-solution card. */
 .approach-case-label { margin: var(--space-6) 0 0; font-size: var(--text-small); font-weight: 700; color: var(--color-accent); }
 .solved-grid.approach-case { margin-top: var(--space-3); }
+/* ==== Revision 2, round 1 (brief v36) ==================================== */
+
+/* 1. Readability: darker secondary text, larger small labels */
+:root { --color-muted: #595959; --color-band: #f1efe9; }
+@media (prefers-color-scheme: dark) {
+  :root { --color-muted: #a3a3a3; --color-band: #121212; }
+}
+.eyebrow { font-size: 0.8125rem; letter-spacing: 0.12em; }
+.card p, .project-card p { font-size: 1rem; }
+.solved-org { font-size: 1rem; }
+.solved-label { font-size: 0.8125rem; }
+.solved-card .chip, .status-pill { font-size: 0.8125rem; }
+.hero-logos-label, .hero-home .hero-logos-label, .project-label, .rc-item dt { font-size: 0.75rem; letter-spacing: 0.12em; }
+.xp-label { font-size: 0.75rem !important; letter-spacing: 0.12em; }
+
+/* 2. Home hero buttons: View resume leads (filled), See my work follows (outlined) */
+.hero-home .hero-text > .hero-actions { margin-top: var(--space-5); }
+.btn-hero { gap: 0.6rem; min-height: 3.25rem; padding: 0.85rem 1.5rem; font-size: 1.0625rem; font-weight: 650; }
+.btn-hero .btn-icon { width: 1.15rem; height: 1.15rem; flex: none; }
+.btn-hero .btn-arrow { font-weight: 700; transition: transform var(--duration-fast) ease; }
+.btn-hero:hover .btn-arrow, .btn-hero:focus-visible .btn-arrow { transform: translateX(3px); }
+.btn-primary.btn-hero { box-shadow: 0 6px 16px -6px color-mix(in srgb, var(--color-accent) 70%, transparent); }
+.btn-primary.btn-hero:hover { transform: translateY(-2px); filter: brightness(1.06); box-shadow: 0 10px 22px -8px color-mix(in srgb, var(--color-accent) 85%, transparent); }
+.btn-outline { background: transparent; color: var(--color-accent); border: 1.5px solid var(--color-accent); }
+.btn-outline:hover { background: var(--color-accent-subtle); color: var(--color-accent); transform: translateY(-2px); }
+.btn-hero:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+@media (max-width: 29.99rem) {
+  .hero-actions { flex-direction: column; }
+  .hero-actions li, .hero-actions .btn { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-hero, .btn-hero .btn-arrow { transition: none; }
+  .btn-hero:hover, .btn-hero:hover .btn-arrow, .btn-hero:focus-visible .btn-arrow { transform: none; }
+}
+
+/* 3. Home: tinted full-width bands so sections read as chapters (no extra HTML wrappers) */
+.band {
+  background: var(--color-band);
+  box-shadow: 0 0 0 100vmax var(--color-band);
+  clip-path: inset(0 -100vmax);
+  padding-block: var(--space-7);
+}
+.band .solved-card { background: var(--color-bg); }
+.solved.band { margin-top: var(--space-7); }
+.solved.band + .fightrons { margin-top: var(--space-7); padding-top: 0; border-top: 0; }
+.contact-panel.band { margin-top: var(--space-7); border: 0; border-radius: 0; padding-inline: 0; }
+.band + .next-card-wrap { margin-top: var(--space-6); }
+
+/* 4. Very narrow phones (about 320px): Fightrons buttons stack, so the page no longer scrolls sideways */
+@media (max-width: 23.99rem) {
+  .fightrons-links { grid-template-columns: 1fr; }
+}
+@media (prefers-color-scheme: dark) {
+  /* Dark mode: a plain shadow, not a coloured glow */
+  .btn-primary.btn-hero { box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.7); }
+  .btn-primary.btn-hero:hover { box-shadow: 0 8px 18px -6px rgba(0, 0, 0, 0.8); }
+}
