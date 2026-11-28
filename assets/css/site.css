@@ -1864,6 +1864,13 @@ main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section):not(.
 /* Print: keep the resume's print colours and label sizes as they were before round 1 */
 @media print {
   :root { --color-muted: #333333; --color-text-bold: #000000; }
-  .rc-item dt { font-size: 6.5pt; }
-  .xp-label { font-size: 0.7rem !important; }
+  .rc-item dt { font-size: 6.5pt; letter-spacing: 0.14em; }
+  .xp-label { font-size: 0.7rem !important; letter-spacing: 0.15em; }
+  .eyebrow, .project-label { letter-spacing: 0.15em; }
+  .hero-logos-label { letter-spacing: 0.14em; }
 }
+
+/* 404 at about 320px: the two link cards per row may shrink, so the page does not scroll sideways */
+.nf-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.nf-card-line { overflow-wrap: anywhere; }
+@media (min-width: 56rem) { .nf-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
