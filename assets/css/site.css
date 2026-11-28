@@ -1863,7 +1863,7 @@ main > .wrap-wide > *:not(.hero-home):not(.cards-grid):not(.video-section):not(.
 
 /* Print: keep the resume's print colours and label sizes as they were before round 1 */
 @media print {
-  :root { --color-muted: #333333; }
+  :root { --color-muted: #333333; --color-text-bold: #000000; }
   .rc-item dt { font-size: 6.5pt; }
   .xp-label { font-size: 0.7rem !important; }
 }
